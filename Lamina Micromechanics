@@ -4,6 +4,7 @@
 
 # import pandas
 import math
+import numpy as np
 
 # Elastic Constant
 # Inputs
@@ -28,15 +29,20 @@ G12 = Gm * (((Gm + G12f) - Vf * (Gm - G12f)) / ((Gm + G12f) + Vf * (Gm - G12f)))
 print(G12)
 
 # Outputs
-# lamina_properties = {(E1f, E2f, G12f, v12f), (Em, Em, Gm, vm), (E1, E2, G12, v12)]
+# lamina_properties = [(E1f, E2f, G12f, v12f), (Em, Em, Gm, vm), (E1, E2, G12, v12)]
+lamina_properties = [E1f, E2f, G12f, v12f, Em, Em, Gm, vm, E1, E2, G12, v12] # creating the list of properties 
 
+# final_prop = np.array(lamina_properties) * 1e-9
+
+# if else statement to then obtain proper results
 if units == 1:
-    lamina_properties = int(lamina_properties) * 1e-6
+    final_prop = np.array(lamina_properties) * 1e-6
+    print(final_prop)
 else:
-    lamina_properties = int(lamina_properties) * 1e-9
+    final_prop = np.array(lamina_properties) * 1e-9
+    print(final_prop)
 
-
-def lamina():
+'''def lamina():
     units = int(input('PSI (1) or Pa (2) (enter 1 or 2): '))
     Vf = float(input('Fiber Volume Fraction, Vf: '))  # Volume Fraction
 
@@ -53,4 +59,4 @@ def lamina():
     E2 = 1 / ((1 - math.sqrt(Vf)) / Em + math.sqrt(Vf) / (
             E2f * math.sqrt(Vf) + Em * (1 - math.sqrt(Vf))))  # Improved Mechanics of Materials model
     G12 = Gm * (((Gm + G12f) - Vf * (Gm - G12f)) / ((Gm + G12f) + Vf * (Gm - G12f)))  # CCM
-    return Gm, E1, v12, E2, G12
+    return Gm, E1, v12, E2, G12'''
