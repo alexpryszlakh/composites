@@ -1,0 +1,64 @@
+# CLT code
+# Author: Alex Hernandez-Pryszlak, Daniel Donate-Perez
+# Date:   2/15/2022
+# ---------------------------------------------------------------
+
+"""%% Part 0: Material Properties (Done)
+% Input:
+%   1. Layer material properties
+%       a. E1,E2,v12,G12
+%       *b. CTE(1,2,3),CMD(1,2,3)*
+%   2. Layer geometry
+%       a. Number of layers
+%       b. Layer thickness
+%       c. Layer orientation
+% Pre-Output:
+%   1. z-vector
+%   2. *Record whether symmetric*
+%   3. *Record whether balanced*
+%   4. *Record whether cross-ply*
+% Output:
+%   1. Table of layer information
+
+% Input_1.a: Layer material properties(E1,E2,v12,G12)
+%% Laminate Input Prompt
+% Number of Layers
+number_layers = input('Number of Layers: ');
+
+% Layer Material Property Input
+matl_prompt = input('Does each layer have the same material properties? (1 = Yes, 0 = No): '); """
+# ----------------------------------------------------------------------------------------------------
+# Laminate Input Prompt
+# Number of Layers
+number_layers = int(input('Number of Layers: '))
+
+# Layer Material Property Input
+matl_prompt = input('Does each layer have the same material properties? (1 = Yes, 0 = No): ')
+
+count = 1
+
+laminate_properties = []
+if matl_prompt == 1:
+    print('For all layers 1 to' + str(number_layers) + ':')
+    E1 = input('E1 [Pa]: ')
+    laminate_properties.append(E1)
+    E2 = input('E2 [Pa]: ')
+    laminate_properties.append(E1)
+    v12 = input('v12: ')
+    laminate_properties.append(E1)
+    G12 = input('G12 [Pa]: ')
+    laminate_properties.append(E1)
+    print(laminate_properties)
+else:
+    while count <= number_layers:
+        print('For layer' + str(count) + ':')
+        E1 = input('E1 [Pa]: ')
+        laminate_properties.append(E1)
+        E2 = input('E2 [Pa]: ')
+        laminate_properties.append(E1)
+        v12 = input('v12: ')
+        laminate_properties.append(E1)
+        G12 = input('G12 [Pa]: ')
+        laminate_properties.append(E1)
+        count = count + 1
+    print(laminate_properties)
