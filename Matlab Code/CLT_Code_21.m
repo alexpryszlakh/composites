@@ -70,7 +70,6 @@ if layer_prompt == 1
     while count <= number_layers
         z_vect(count + 1) = z_vect(1) + laminate_properties(1,7)*count;
         count = count + 1;
-        keep it as z vec or what??
     end
 elseif layer_prompt == 0
     while count <= number_layers
