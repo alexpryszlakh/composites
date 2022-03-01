@@ -62,6 +62,7 @@ end
 % Layer Thickness Input
 layer_prompt = input('Is each layer the same thickness? (1=Yes, 0=No): ');
 count = 1;
+laminate_properties
 
 if layer_prompt == 1
     fprintf('Thickness of all layers 1 to %.0f: \n',number_layers);
@@ -70,6 +71,7 @@ if layer_prompt == 1
     while count <= number_layers
         z_vect(count + 1) = z_vect(1) + laminate_properties(1,7)*count;
         count = count + 1;
+        z_vect
     end
 elseif layer_prompt == 0
     while count <= number_layers
