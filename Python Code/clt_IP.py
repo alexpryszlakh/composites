@@ -260,19 +260,13 @@ Qb(i, 2: 7) = Qbar(E1, E2, v12, G12, theta);'''
 # stress(i, 5: 7) = stress_12
 # '
 #
-# '''Graphing'''
-# # colNames = {'Layer_Number', 'strain_x', 'strain_y', ...
-# #             'strain_xy', 'strain_1', 'strain_2', ...
-# #             'strain_12'}
-# # strain_table = array2table((strain), 'VariableNames', colNames)
-# # colNames = {'Layer_Number', 'stress_x', 'stress_y', ...
-# #             'stress_xy', 'stress_1', 'stress_2', ...
-# #             'stress_12'};
-# # stress_table = array2table((stress), 'VariableNames', colNames)
-# # % Find
-# # max
-# # layer
-# # tensile, compressive, shear
-# # stress
-# # stressT1_max = max(stress(:, 4));
-# # % %
+'''Graphing
+colNames = {'Layer_Number', 'strain_x', 'strain_y', ...
+            'strain_xy', 'strain_1', 'strain_2', ...
+            'strain_12'}
+strain_table = array2table((strain), 'VariableNames', colNames)
+colNames = {'Layer_Number', 'stress_x', 'stress_y', ...
+            'stress_xy', 'stress_1', 'stress_2', ...
+            'stress_12'};
+stress_table = array2table((stress), 'VariableNames', colNames)
+% Find'''
